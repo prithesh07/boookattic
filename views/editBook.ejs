@@ -178,7 +178,7 @@
 							<label for="radio2" id="txt"  style="font-size:20px;" checked="checked">Non Fiction</label>
 						</div>	<br><br>
 						<text id="txt" style="font-size:20px;">Price</text><text id="txt" style="font-size:20px;float:none;padding-left:330px;">Rating</text><br><br>
-						<input type="text" name="Price" class="rc" value="&nbsp;&nbsp;&nbsp;&nbsp;<%=Book.price%>" style="width:181px;" required>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="text" pattern="[0-9]{0,5}" name="Price" class="rc" value="&nbsp;&nbsp;&nbsp;&nbsp;<%=Book.price%>" style="width:181px;" required>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<select name="Rating" class="rc"  style="width:181px;float:none;" required>
 							  <option value="1">1</option>
 							  <option value="2">2</option>
