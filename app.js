@@ -106,14 +106,18 @@ app.post("/deleteBook",isLoggedIn, function(req, res){
 });
 
 app.post("/edit",isLoggedIn, function(req, res){
-	var title=req.body.Title;
+	var titl=req.body.Title;
 	var author=req.body.Author;
 	var url=req.body.Url;
 	var price=req.body.Price;
 	var cat=req.body.Category;
 	var desc=req.body.Description;
 	var rate=req.body.Rating;
-	var myquery = { title: title};
+	var id = req.query.title;
+	
+	var myquery = { title: titl};
+	console.log(myquery);
+
 	
 	Book.remove(myquery, function(req, res) {
 				
@@ -123,7 +127,7 @@ app.post("/edit",isLoggedIn, function(req, res){
 
 	Book.create(
 	{
-	   title: title,
+	   title: titl,
 	   author:author,
 	   rating:rate,
 	   price:price,

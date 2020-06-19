@@ -165,11 +165,11 @@
 				<% if(Book.title==name){%>	
 					<form action="/edit" method="post">
 						<text id="txt" style="font-size:20px;">Book Title</text><br><br>
-						<input type="text" name="Title" class="rc" style="text-align: left;" value="&nbsp;&nbsp;&nbsp;&nbsp;<%=name%>"required><br><br>						
+						<input type="text" name="Title" class="rc" style="text-align: left;" value="<%=name%>"readonly><br><br>						
 						<text id="txt" style="font-size:20px;">Author</text><br><br>
 						<input type="text" name="Author" class="rc" style="text-align: left;" value="&nbsp;&nbsp;&nbsp;&nbsp;<%=Book.author%>" required><br><br>
 						<text id="txt" style="font-size:20px;">Image URL</text><br><br>
-						<input type="text" name="Url" class="rc" value="&nbsp;&nbsp;&nbsp;&nbsp;<%=Book.image%>"required><br><br>
+						<input type="text" name="Url" class="rc" value="<%=Book.image%>"required><br><br>
 						<div class="radiobuto">	
 							<text id="txt" style="font-size:20px;">Category&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
 							<input type="radio" id="radio1" name="Category" value="Fiction" checked="checked">
