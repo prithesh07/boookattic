@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bookapp</title>
+		<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+		
+		<style>
+			
+			@media only screen and (max-width: 1026px) { 
+			  .imagesec { 
+				display: none; 
+			  } 
+			}
+			div
+			{
+				padding-left: 20px;
+			}
+			#c1{
+				height: 246px;
+			}
+
+			#c3 {
+				height: 246px;
+			}
+			#rr1,#rr3{
+				height:90px;
+			}
+			pre{
+				font-size:15;
+				font-family: 'Lato';	
+				color:#FFFFFF ;
+			}
+			*{
+				margin:0;
+				padding:0;
+				box-sizing:border-box;
+			}
+			html,body{
+				height:100%
+				background:#1E1E1F;
+			}
+			.imagesec
+			{
+				height:100%;
+				background: #1E1E1F;
+				width:60%;
+			}
+			.loginsec
+			{
+				height:100%;
+				background: #1E1E1F;
+				width:40%;
+			}
+			.container
+			{
+				height:100%;
+				background:#1E1E1F;
+				display:flex;
+			}
+			#rc {
+				font-weight: bold;
+				font-size: 20px;
+				font-weight: normal;
+				text-align: center;
+				font-family: 'Lato';
+				color:#FCF9F9;
+				background:#282728;
+			    border-radius: 28px;
+			    border: 1px solid #FFFFFF;
+			    width: 434px;
+			    height: 64px;
+			}
+			#btnn
+			{
+				background-color:#8059FF;
+				border-radius: 28px;
+				
+			}
+		
+			.red-s{
+			  
+			}
+			::placeholder {
+				color:#FCF9F9;
+				font-size: 20px;
+				font-weight: normal;
+				text-align: left;
+				font-family: 'Lato';
+			}
+			#textuh {
+				font-weight: bold;
+				font-size: 22px;
+				color:#FCF9F9;
+				font-weight: normal;
+				text-align: center;
+				font-family: 'Lato';
+			}
+			#err{
+				visibility: hidden;
+				font-family: 'Lato';
+				color:#DA5C66;
+				font-size: 15px;
+			}
+			
+			
+		</style>	
+		
+      
+		
+	</head>
+    <body>
+    
+		<div class="container">
+			<div class="imagesec">	
+				<div id="rr1"></div>
+				<img style="-webkit-user-select: none;margin: auto;cursor: zoom-in;" src="https://proxy-ap-south1.goorm.io//service/5ee713ceb538843424518fac_dYBBiUU3OanfRTlPmvx.run-ap-south1.goorm.io/9080//file/load/Left_section.png?path=d29ya3NwYWNlJTJGQm9va19PX01hbmlhJTJGYm9va2F0dGljJTJGcHVibGljJTJGc3R5bGVzaGVldHMlMkZMZWZ0X3NlY3Rpb24ucG5n&amp;docker_id=dYBBiUU3OanfRTlPmvx&amp;secure_session_id=WGIZrFNM8YqV676EyIMygON_cf5YDwbC" width="826" height="841">
+			</div>
+			<div id="rr3"></div>
+			<div class="loginsec">
+					<div id="c1"></div>
+    				<div class="container">
+						<form class="red-s" method="POST" action="/landing" >
+							
+							<div style="text-align:center;" id="r2">								
+								<img id="center" style="-webkit-user-select: none;margin: auto;align:center;cursor: zoom-in;" src="https://proxy-ap-south1.goorm.io//service/5ee713ceb538843424518fac_dYBBiUU3OanfRTlPmvx.run-ap-south1.goorm.io/9080//file/load/logo.png?path=d29ya3NwYWNlJTJGQm9va19PX01hbmlhJTJGYm9va2F0dGljJTJGbG9nby5wbmc=&amp;docker_id=dYBBiUU3OanfRTlPmvx&amp;secure_session_id=bg_BZngD_5nvekPNkIWcleS6hBzhttJt" width="299" height="64">								
+							</div>
+							<div id="r3"></div>						
+						<br><br><br>
+						<input type="text" name="username" id="rc" placeholder="     Username" required>
+						<br><br>
+						<input type="password" name="password" id="rc" placeholder="     Password" required>
+						<br><br><pre id="err">            Username or password is incorrect</pre><br><br>							
+							<button type="submit" id="btnn" style="height:64px;width:434px"><text id="textuh">LOGIN</text></button>
+						<pre>
+						
+						
+						New to BookAttic? <a href="register">Register</a><br>
+								
+				This mini project was developed as part of 
+						Sirius Summer Internship
+						</pre>																	
+						</form>		
+					</div>
+    				<div id="c3"></div>
+					
+			</div>
+		</div>
+		<script>
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+		const Status = urlParams.get('status')
+		if(Status)
+		{
+			document.getElementById("err").style.visibility = "visible";
+		}
+		</script>
+  </body>
+	
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bookapp</title>
+		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<style>
+			
+		
+			*{
+				margin:0;
+				padding:0;
+				box-sizing:border-box;
+			}
+			html,body{
+				height:100%;
+			}
+			.topcontent
+			{
+				padding-left:50px;
+				padding-top:50px;
+				padding-right:50px;
+			}
+			
+			.leftcontent
+			{	
+				padding-left:50px;
+				padding-top:50px;
+				padding-right:50px;
+			}
+			.leftsection{
+				width:20%;
+				height:145%;
+				background:#343334;
+			}
+			.rightsection{
+				width:80%;
+				height:145%;
+				background:#1E1E1F;
+			}
+			.containerrr
+			{
+				height:100%;
+				display:flex;
+			}
+			#txt{
+				font-weight: bold;
+				font-size: 26px;
+				color:#FFFFFF;
+				font-weight: normal;
+				text-align: center;
+				font-family: 'Lato';
+			}		
+			.oval {
+			  height: 50px;
+			  width: 50px;
+			  background-color: #E2E0E2;
+			  border-radius: 50%;			 
+			}
+			hr{
+				padding-top:20px;
+				border: 0;
+				height: 0;
+				width: 1550px;
+				border-top: 1px solid rgba(0, 0, 0, 0.1);
+				border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+			}
+			#pic{
+				border-radius: 10px;
+			  height: 318px;
+			  width: 220px;
+			 background-color:#2E2D2E;
+				padding-left:50px;
+				padding-top:50px;
+				padding-right:50px;
+				padding-right:50px;
+				border-color:#1E1E1F;
+			}
+			.captionn{
+				color:#FFFFFF;
+				font-weight: normal;
+				text-align: left;
+				font-family: 'Lato';
+				font-size: 16px;
+				padding-top:5px;
+			}
+			.captionnn{
+				color:#FFFFFF;
+				font-weight: normal;
+				text-align: left;
+				font-family: 'Lato';
+				font-size: 10px;
+			}
+			.left{
+				padding-left:50px;
+				height:294px;
+			}
+			.right{
+				padding-left:50px;
+				height:294px;
+				
+			}
+			.checked {
+			  color: #EBB475;
+			}
+			#btnn
+			{
+				background-color:#8059FF;
+				border-radius: 28px;		
+			}
+				
+			
+			
+		</style>
+		<script>
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+		const Title = urlParams.get('title')
+		
+		</script>
+		
+	</head>
+    <body>
+    
+		<div class="containerrr">
+			<div class="leftsection">
+				<div class="leftcontent">
+					<img id="center" style="-webkit-user-select: none;margin: auto;align:center;cursor: zoom-in;" src="https://proxy-ap-south1.goorm.io//service/5ee713ceb538843424518fac_dYBBiUU3OanfRTlPmvx.run-ap-south1.goorm.io/9080//file/load/logo.png?path=d29ya3NwYWNlJTJGQm9va19PX01hbmlhJTJGYm9va2F0dGljJTJGbG9nby5wbmc=&amp;docker_id=dYBBiUU3OanfRTlPmvx&amp;secure_session_id=bg_BZngD_5nvekPNkIWcleS6hBzhttJt" width="196" height="42">	
+				<br><br><br><br><br>
+				<a style="text-decoration:none" href="/campgrounds"><text id="txt">HOME</text></a>
+				<br><br>
+				<a style="text-decoration:none" href="/addBook"><text id="txt">ADD BOOK</text></a>
+				<br><br>
+				<a style="text-decoration:none" href="/logout"><text id="txt">LOGOUT</text></a>
+					
+				</div>
+				
+				
+			</div>
+			<div class="rightsection">
+				<div  class="topcontent" style="text-align:right; vertical-align: text-top;" id="txt"><text>Hello,&nbsp;&nbsp;<span style="text-transform: uppercase;"><%= currentUser.username%></span>&nbsp;&nbsp;</text><div style="display: inline-block;vertical-align:middle;" class="oval"></div></div>
+				<div class="leftcontent" style="padding-top:5px">
+					<a style="text-decoration:none" href="/campgrounds"><span style=" color:#FFFFFF;font-weight:bold;font-size: 30px;">&larr;</span></a><text id="txt">&nbsp;&nbsp;BOOK DETAIL</text><br><br>
+					<div style="float:right">
+						<a style="text-decoration:none" href="/editBook?title=<%= name %>"><span style=" color:#FFFFFF;font-weight:bold;font-size: 40px;">	&#128393;</span></a>
+					</div>
+				</div>	
+				<text id="txt" style="font-size: 100px">
+				</text>
+				<% Book.forEach(function(Book){ %>
+				<% if(Book.title==name){%>				
+				<div>
+						   <div style="width:350px;Text-align:left;">
+						   <img style="padding-left:50px;height:274px;width:250px;vertical-align:top;float:left;" src="<%= Book.image %>">
+						   </div>
+						   <div style="Text-align:left;Width:auto;">
+						   <text id="txt" style="padding-bottom: 5px;padding-left:50px;color:#FFFFFF;font-size: 36px;"><%=Book.title %>-</text><br>
+						  <text id="txt" style="padding-bottom: 5px;padding-left:50px;color:#FFFFFF;font-size: 36px;">Paperback</text><br>
+							<span style="padding-left:50px;" class="fa fa-star checked"></span>
+							<% var i= parseInt(Book.rating, 10),x=0;%>	
+							<% while(i>1){ %>
+							<span class="fa fa-star checked"></span>
+							   <%i--;x++; } %>
+							   <%var y=5-x; %>
+							  <% for (i =1; i<y;  i++ ) {%>
+							<span class="fa fa-star"></span>
+							    <% } %>
+							<text id="txt" style="padding-left:10px;color:#FFFFFF;font-size: 18px;"> <%= Book.rating %>&nbsp; Rating</text>
+						  <br>
+						   <text id="txt" style="padding-bottom: 5px;padding-left:50px;color:#8059FF;font-size: 24px;">By &nbsp;<%=Book.author %></text><br>
+						   <text id="txt" style="padding-top: 50px;padding-left:50px;color:#FFFFFF;font-size: 34px;font-weight: lighter;">&#8377;<%=Book.price%></text><br>
+						   <span style="padding-left:50px;"><button type="submit" id="btnn" style="height:50px;width:236px">Add to cart</button></span>
+						   </div>
+				</div>
+				<div class="topcontent">					
+				<text id="txt" style="color:#FFFFFF;font-size: 30px;">About the Book</text>
+					<br><br>
+					<text id="txt" style="color:#FFFFFF;font-size: 22px;font-weight:300;"><%=Book.description %></text>					
+				</div>
+					<%}%>
+						<% }); %>
+				<div class="topcontent" style="padding-top:20px;">					
+				<text id="txt" style="color:#FFFFFF;font-size: 30px;">Reviews</text>				
+				</div>
+				<div class="topcontent" style="padding-top:20px;">					
+				<text id="txt" style="font-size: 16px;padding-top:10px;">Amazing Book</text><br>
+				<text id="txt" style="color:#8059FF;font-size: 12px;padding-top:10px;">By PRAKASH KURUP</text><br>
+				<text id="txt" style="font-size: 12px;padding-top:10px;">The book was absolutely amazing. I recommend all buyers who love reading books to read this one!</text><br>
+				</div>
+				<hr style="width:1004px; margin: auto;" />
+				<div class="topcontent" style="padding-top:20px;">					
+				<text id="txt" style="font-size: 16px;padding-top:10px;">Good Buy</text><br>
+				<text id="txt" style="color:#8059FF;font-size: 12px;padding-top:10px;">BY VANDHANA</text><br>
+				<text id="txt" style="font-size: 12px;padding-top:10px;">Good quality paperback print. Delivered on time</text><br>			
+				</div>
+				<hr style="width:1004px; margin: auto;" />			
+				
+				
+			</div>	
+		</div>
+						
+  </body>
+	
+</html>

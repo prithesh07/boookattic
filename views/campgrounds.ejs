@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bookapp</title>
+		<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<style>
+			
+		
+			*{
+				margin:0;
+				padding:0;
+				box-sizing:border-box;
+			}
+			html,body{
+				height:100%;
+			}
+			.topcontent
+			{
+				padding-left:50px;
+				padding-top:50px;
+				padding-right:50px;
+			}
+			
+			.leftcontent
+			{	
+				padding-left:50px;
+				padding-top:50px;
+				padding-right:50px;
+			}
+			.leftsection{
+				width:20%;
+				height:130%;
+				background:#343334;
+			}
+			.rightsection{
+				width:80%;
+				height:130%;
+				background:#1E1E1F;
+			}
+			.containerrr
+			{
+				height:100%;
+				display:flex;
+			}
+			#txt{
+				font-weight: bold;
+				font-size: 26px;
+				color:#FFFFFF;
+				font-weight: normal;
+				text-align: center;
+				font-family: 'Lato';
+			}		
+			.oval {
+			  height: 50px;
+			  width: 50px;
+			  background-color: #E2E0E2;
+			  border-radius: 50%;			 
+			}
+			#pic{
+				border-radius: 10px;
+			  height: 318px;
+			  width: 220px;
+			 background-color:#2E2D2E;
+				padding-left:50px;
+				padding-top:50px;
+				padding-right:50px;
+				padding-right:50px;
+				border-color:#1E1E1F;
+			}
+			.captionn{
+				color:#FFFFFF;
+				font-weight: normal;
+				text-align: left;
+				font-family: 'Lato';
+				font-size: 16px;
+				padding-top:5px;
+			}
+			.captionnn{
+				color:#FFFFFF;
+				font-weight: normal;
+				text-align: left;
+				font-family: 'Lato';
+				font-size: 10px;
+			}
+				
+			
+			
+		</style>	    
+		
+	</head>
+    <body>
+    
+		<div class="containerrr">
+			<div class="leftsection">
+				<div class="leftcontent">
+					<img id="center" style="-webkit-user-select: none;margin: auto;align:center;cursor: zoom-in;" src="https://proxy-ap-south1.goorm.io//service/5ee713ceb538843424518fac_dYBBiUU3OanfRTlPmvx.run-ap-south1.goorm.io/9080//file/load/logo.png?path=d29ya3NwYWNlJTJGQm9va19PX01hbmlhJTJGYm9va2F0dGljJTJGbG9nby5wbmc=&amp;docker_id=dYBBiUU3OanfRTlPmvx&amp;secure_session_id=bg_BZngD_5nvekPNkIWcleS6hBzhttJt" width="196" height="42">	
+				<br><br><br><br><br>
+				<a style="text-decoration:none" href="/campgrounds"><text id="txt" style="color:#8059FF;font-weight: bold;">HOME</text></a>
+				<br><br>
+				<a style="text-decoration:none" href="/addBook"><text id="txt">ADD BOOK</text></a>
+				<br><br>
+				<a style="text-decoration:none" href="/logout"><text id="txt">LOGOUT</text></a>
+					
+				</div>
+				
+				
+			</div>
+			<div class="rightsection">
+				<div  class="topcontent" style="text-align:right; vertical-align: text-top;" id="txt"><text>Hello,&nbsp;&nbsp;<span style="text-transform: uppercase;"><%= currentUser.username%></span>&nbsp;&nbsp;</text><div style="display: inline-block;vertical-align:middle;" class="oval"></div></div>
+				<div class="leftcontent" style="padding-top:5px">
+					<text id="txt">FICTION</text><br><br><div class="row text-center" style="display:flex; flex-wrap: wrap;">
+						<% Book.forEach(function(Book){ %>
+						<% if(Book.type=="Fiction"){%>
+							<a href="/bookdetail?title=<%= Book.title %>"><div class="col-md-3 col-sm-6">
+								<div class="thumbnail" id="pic" >
+								   <img style="height:192px;width:164px;vertical-align:top;" src="<%= Book.image %>">
+								   <div class="captionn">						
+									   <%= Book.title %>									  
+								   </div>
+									<div class="captionnn">						
+									   by&nbsp;<%= Book.author %>									  
+								   </div>
+									<div class="captionnn">						
+									  <%= Book.rating %>&nbsp; Rating&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; <span style="color:#8059FF;"> &#8377;<%= Book.price %> .00	</span>								  
+								   </div>
+								</div>
+								</div></a>
+						<%}%>
+						<% }); %>
+					</div>
+					<br>
+					<text id="txt">NON FICTION</text><br><br>
+					
+					<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+						<% Book.forEach(function(Book){ %>
+						<% if(Book.type=="Non Fiction"){%>
+							<a href="/bookdetail?title=<%= Book.title %>"><div class="col-md-3 col-sm-6">
+								<div class="thumbnail" id="pic" >
+								   <img style="height:192px;width:164px;vertical-align:top;" src="<%= Book.image %>">
+								   <div class="captionn">						
+									   <%= Book.title %>									  
+								   </div>
+									<div class="captionnn">						
+									   by&nbsp;<%= Book.author %>									  
+								   </div>
+									<div class="captionnn">						
+									   <%= Book.rating %>&nbsp; Rating&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#8059FF;"> &#8377;<%= Book.price %> .00	</span>								  
+								   </div>
+								</div>
+						</div></a>
+						<%}%>
+						<% }); %>
+					</div>
+					
+					
+				</div>
+			</div>	
+		</div>
+						
+  </body>
+	
+</html>
